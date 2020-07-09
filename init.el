@@ -1,0 +1,161 @@
+(require 'package)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+   (when no-ssl (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
+(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+  ;; and `package-pinned-packages`. Most users will not need or want to do this.
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  )
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+;; Set up package.el to work with MELPA
+(require 'package)
+(require 'semantic)
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+(semantic-mode 1)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+;;(package-initialize)
+;;(package-refresh-contents)
+
+;; Enable Evil
+(require 'evil-leader)
+(require 'evil)
+(evil-leader/set-leader "<SPC>")
+(global-evil-leader-mode)
+(ivy-mode 1)
+(evil-mode 1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (gruvbox-dark-hard)))
+ '(custom-safe-themes
+   (quote
+    ("4cf9ed30ea575fb0ca3cff6ef34b1b87192965245776afa9e9e20c17d115f3fb" default)))
+ '(package-selected-packages
+   (quote
+    (cedit evil-leader ace-window gruvbox-theme evil-visualstar ivy snippet cmake-ide flycheck auto-complete-clang helm-gtags c0-mode org-evil org-pdftools evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(global-display-line-numbers-mode)
+(define-key evil-normal-state-map (kbd "C-r") nil)
+(define-key query-replace-map (kbd "<escape>") 'keyboard-quit)
+(define-key evil-normal-state-map
+	    (kbd "a") 'evil-backward-char
+	    )
+(define-key evil-normal-state-map
+	    (kbd "e") 'evil-next-line
+	    )
+(define-key evil-normal-state-map
+	    (kbd "o") 'evil-previous-line
+	    )
+(define-key evil-normal-state-map
+	    (kbd "h") 'evil-forward-char
+	    )
+(define-key evil-visual-state-map
+	    (kbd "a") 'evil-backward-char
+	    )
+(define-key evil-visual-state-map
+	    (kbd "e") 'evil-next-line
+	    )
+(define-key evil-visual-state-map
+	    (kbd "o") 'evil-previous-line
+	    )
+(define-key evil-visual-state-map
+	    (kbd "h") 'evil-forward-char
+	    )
+(define-key evil-normal-state-map 
+  (kbd "n") 'evil-append
+  )
+(define-key evil-normal-state-map
+  (kbd "t") 'evil-insert
+  )
+(define-key evil-normal-state-map
+  (kbd "r") 'evil-delete-char
+  )
+(define-key evil-normal-state-map
+  (kbd "C-r") 'kill-line
+  )
+(define-key evil-normal-state-map
+  (kbd "f") 'find-file
+  )
+(global-unset-key (kbd "C-s"))
+(global-unset-key (kbd "C-t"))
+(evil-leader/set-key
+  "n" 'other-window
+  "u" 'switch-to-buffer
+  "U" 'kill-buffer
+  "N" 'delete-window
+  )
+(define-key evil-normal-state-map
+  (kbd "G") 'split-window-horizontally
+  )
+(define-key evil-normal-state-map
+  (kbd "C-f") 'global-display-line-numbers-mode
+  )
+(define-key evil-normal-state-map
+  (kbd "M") 'split-window-vertically
+  )
+(define-key evil-normal-state-map
+  (kbd "/") 'evil-search-forward)
+(define-key evil-normal-state-map
+  (kbd "?") 'evil-search-backward)
+(define-key evil-normal-state-map
+  (kbd ",") 'evil-search-next)
+(define-key evil-normal-state-map
+  (kbd "<") 'evil-search-next)
+(define-key evil-normal-state-map
+  (kbd "C-t") 'nil
+  )
+(define-key evil-normal-state-map
+  (kbd "S-C-a") 'enlarge-window-horizontally
+  )
+(define-key evil-normal-state-map
+  (kbd "S-C-h") 'shrink-window-horizontally
+  )
+(define-key evil-normal-state-map
+  (kbd "S-C-e") 'enlarge-window
+  )
+(define-key evil-normal-state-map
+  (kbd "S-C-o") 'shrink-window
+  )
+(define-key evil-normal-state-map
+  (kbd "s") 'evil-visual-state
+  )
+(define-key evil-normal-state-map
+  (kbd "v") 'evil-paste-after
+  )
+(define-key evil-normal-state-map
+  (kbd "c") 'evil-yank
+  )
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(require 'package)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+(add-hook 'c-mode-common-hook (lambda ()
+				(local-set-key (kbd "RET") 'newline-and-indent)))
+(add-hook 'python-mode-common-hook (lambda ()
+				     (local-set-key (kbd "RET") 'newline-and-indent)))
