@@ -1,4 +1,0 @@
-/sudo:root@pop-os:/usr/share/X11/xorg.conf.d/40-libinput.conf
-/tmp/#!sudo:root@pop-os:!usr!share!X11!xorg.conf.d!40-libinput.conf#
-/sudo:root@pop-os:/usr/share/X11/xorg.conf.d/10-amdgpu.conf
-/tmp/#!sudo:root@pop-os:!usr!share!X11!xorg.conf.d!10-amdgpu.conf#
