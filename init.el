@@ -34,6 +34,8 @@ There are two things you can do about this warning:
 (evil-leader/set-leader "<SPC>")
 (global-evil-leader-mode)
 (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 (evil-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -49,9 +51,11 @@ There are two things you can do about this warning:
  '(custom-safe-themes
    (quote
     ("4cf9ed30ea575fb0ca3cff6ef34b1b87192965245776afa9e9e20c17d115f3fb" default)))
+ '(global-display-line-numbers-mode t)
  '(package-selected-packages
    (quote
-    (cedit evil-leader ace-window gruvbox-theme evil-visualstar ivy snippet cmake-ide flycheck auto-complete-clang helm-gtags c0-mode org-evil org-pdftools evil))))
+    (ycm ivy-ycmd company-ctags cedit evil-leader ace-window gruvbox-theme evil-visualstar ivy snippet cmake-ide flycheck auto-complete-clang helm-gtags c0-mode org-evil org-pdftools evil)))
+ '(semantic-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

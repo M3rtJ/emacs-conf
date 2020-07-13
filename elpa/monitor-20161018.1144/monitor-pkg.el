@@ -1,6 +1,6 @@
 (define-package "monitor" "20161018.1144" "Utilities for monitoring expressions."
   '((dash "2.13.0"))
-  :keywords
+  :commit "63f4643a0ee81616dbb692b8b03bae21df2283e2" :keywords
   '("lisp" "monitor" "utility")
   :authors
   '(("Ben Moon" . "software@guiltydolphin.com"))

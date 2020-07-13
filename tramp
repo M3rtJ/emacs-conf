@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <20/06/11 04:13:36 /home/jam/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <20/07/12 21:04:48 /home/jam/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -25,4 +25,22 @@
   ("touch" "\\touch")
   ("ls" "/bin/ls --color=never")
   ("ls-quoting-style" t)
-  ("ls-dired" t)))
+  ("ls-dired" t))
+ ((tramp-file-name "sudo" "root" nil "pop-os" nil nil nil)
+  ("uname" "Linux 5.4.0-7634-generic")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("file-exists" "test -e")
+  ("stat" "env QUOTING_STYLE=locale \\stat")
+  ("id" "/bin/id")
+  ("gid-string" "root")
+  ("tmpdir" "/sudo:root@pop-os:/tmp")
+  ("uid-integer" 0)
+  ("gid-integer" 0)
+  ("case-insensitive" nil)))

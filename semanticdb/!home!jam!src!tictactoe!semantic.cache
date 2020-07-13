@@ -1,0 +1,64 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("fillerchar" variable (:constant-flag t) nil [29 39])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [46 66])
+            ("settile" function
+               (:arguments 
+                  ( ("currentteam" variable (:type "char") (reparse-symbol arg-sub-list) [80 97])
+                    ("inputhori" variable (:type "int") (reparse-symbol arg-sub-list) [98 112])
+                    ("inputvert" variable (:type "int") (reparse-symbol arg-sub-list) [113 127])
+                    ("board" variable
+                       (:dereference 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [127 144]))                  
+                :type "int")
+                nil [68 193])
+            ("getinput" function
+               (:arguments 
+                  ( ("inputhori" variable (:type "int") (reparse-symbol arg-sub-list) [209 223])
+                    ("inputvert" variable (:type "int") (reparse-symbol arg-sub-list) [224 238]))                  
+                :type "int")
+                nil [196 380])
+            ("initboard" function
+               (:arguments 
+                  ( ("board" variable
+                       (:dereference 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [434 451]))                  
+                :type "int")
+                nil [420 573])
+            ("printboard" function
+               (:arguments 
+                  ( ("board" variable
+                       (:dereference 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [647 664]))                  
+                :type "int")
+                nil [632 840])
+            ("main" function (:type "int") nil [844 1143]))          
+      :file "main.cpp"
+      :pointmax 1145
+      :fsize 1144
+      :lastmodtime '(24331 28713 726284 50000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("fillerchar" . 
+              ((punctuation "*" 40 . 41) (string "\" \"" 41 . 44) (punctuation ";" 44 . 45)))
+          )
+)
+
+
+)
+  :file "!home!jam!src!tictactoe!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
